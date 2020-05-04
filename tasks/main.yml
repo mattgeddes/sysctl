@@ -1,0 +1,17 @@
+---
+- name: Set in-memory sysctls
+  command:
+      argv:
+          - "/sbin/sysctl"
+          - "-w"
+          - "{{ item.key }}={{ item.value }}"
+  when: sysctls is defined
+  with_items:
+      "{{ sysctls }}"
+- name: Persist sysctls
+  lineinfile:
+      path: "/etc/sysctl.d/{{ sysctl_file | default( '99-custom-sysctls.conf' ) }}"
+      line: "{{ item.key }}={{ item.value }}"
+  when: sysctls is defined
+  with_items:
+      "{{ sysctls }}"
