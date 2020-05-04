@@ -4,4 +4,20 @@ galaxy_info:
   license: Apache-2.0
   min_ansible_version: 2.9
   galaxy_tags: ["linux", "sysctl"]
+  platforms:
+      - name: Ubuntu
+        versions:
+            - focal
+            - eoan
+            - disco
+            - cosmic
+            - bionic
+      - name: Debian
+        versions:
+            - stretch
+            - buster
+      - name: EL
+        versions:
+            - 8
+            - 7
 dependencies: []
