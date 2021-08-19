@@ -1,5 +1,5 @@
-systl
-=====
+sysctl
+======
 
 A quick ansible role to persist sysctls on Linux in memory and on disk.
 
